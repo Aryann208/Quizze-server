@@ -25,10 +25,6 @@ const path = require('path');
 // Serve static assets
 app.use(express.static(path.join(__dirname, 'build')));
 
-// Serve the main HTML file for all routes
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 // Health
 app.get('/health', (req, res) => {
   res.json({ status: 'Server is healthy' });
